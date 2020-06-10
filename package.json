@@ -1,0 +1,29 @@
+{
+  "name": "exploring-prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/index.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node src/index.js",
+    "postgres:start": "docker run --name prisma-postgres -v `pwd`/prisma:/app/prisma -p 5432:5432 -e POSTGRES_PASSWORD=test -d postgres"
+  },
+  "keywords": [],
+  "author": "Tim Ermilov <yamalight@gmail.com> (http://codezen.net)",
+  "license": "MIT",
+  "devDependencies": {
+    "@prisma/cli": "^2.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.0.0",
+    "fastify": "^2.14.1",
+    "fastify-cookie": "^3.6.1",
+    "fastify-session": "^4.0.0",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
