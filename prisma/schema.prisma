@@ -10,8 +10,8 @@ datasource db {
 model Comment {
   content String?
   id      Int     @default(autoincrement()) @id
-  postId  Int     @unique
-  userId  Int     @unique
+  postId  Int
+  userId  Int
   Post    Post    @relation(fields: [postId], references: [id])
   User    User    @relation(fields: [userId], references: [id])
 }
@@ -28,10 +28,10 @@ model Post {
 }
 
 model User {
-  email    String   @unique
-  id       Int      @default(autoincrement()) @id
+  email    String    @unique
+  id       Int       @default(autoincrement()) @id
   name     String?
   password String?
-  Comment  Comment?
+  Comment  Comment[]
   Post     Post[]
 }
