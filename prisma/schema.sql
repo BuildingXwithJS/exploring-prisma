@@ -16,8 +16,8 @@ CREATE TABLE "public"."Post" (
 CREATE TABLE "public"."Comment" (
   id SERIAL PRIMARY KEY NOT NULL,
   content TEXT,
-  "userId" INTEGER UNIQUE NOT NULL,
-  "postId" INTEGER UNIQUE NOT NULL,
+  "userId" INTEGER NOT NULL,
+  "postId" INTEGER NOT NULL,
   FOREIGN KEY ("userId") REFERENCES "public"."User"(id),
   FOREIGN KEY ("postId") REFERENCES "public"."Post"(id)
 );
